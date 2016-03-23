@@ -1,0 +1,62 @@
+<?php if (!defined('BASEPATH')) { exit('No direct script access allowed');}
+
+/*
+* Enter description here!!
+*
+* -------------------NOTE-------------------
+* HTTP CODE 
+* 200 = OK
+* 404 = Page not found
+* 500 = Internal server error
+* 
+* More http code here https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+*/
+
+require(APPPATH.'/libraries/REST_Controller.php');
+
+class <ClassName> extends REST_Controller
+{
+	/**
+	* Post 
+	*/
+	function <functionName>_post(){
+
+		// variable
+		$var = $this->post('param');
+
+		// response    
+        $this->response(array('key'=>'value'), 200); // 200 being the HTTP response code
+        
+	} // end function
+
+
+	/**
+	* Get 
+	*/
+	function <functionName>_get()
+    {
+        // respond with information about a anything
+        $data = array('returned: '. $this->get('id'));
+        $this->response($data);
+    }
+ 
+ 	/**
+	* Put 
+	*/
+    function <functionName>_put()
+    {
+        // create a new data and respond with a status/errors
+        $data = array('returned: '. $this->put('id'));
+        $this->response($data;
+    }
+ 
+ 	/**
+	* Delete 
+	*/
+    function <functionName>_delete()
+    {
+        // delete a data and respond with a status/errors
+        $data = array('returned: '. $this->delete('id'));
+        $this->response($data);
+    }
+}
